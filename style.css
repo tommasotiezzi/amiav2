@@ -188,7 +188,76 @@ section {
   color: #999;
 }
 
+.timeline-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 
+.timeline-item {
+    display: none;
+}
+
+.timeline-item.active {
+    display: block;
+}
+
+.timeline-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ffdd00;
+    margin-bottom: 20px;
+}
+
+.timeline-description {
+    font-size: 1.125rem;
+    color: #141414;
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+.timeline-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+.timeline-controls button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.timeline-track {
+    width: 300px;
+    height: 2px;
+    background: #ddd;
+    position: relative;
+    margin: 0 20px;
+}
+
+.timeline-dot {
+    width: 24px;
+    height: 24px;
+    background: #141414;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+}
+
+.current-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
 /* Simplified Valori section */
 
 #valori {
