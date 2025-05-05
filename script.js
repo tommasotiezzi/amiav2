@@ -90,4 +90,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    const items = document.querySelectorAll('.timeline-item');
+    const dot = document.querySelector('.timeline-dot');
+    const year = document.querySelector('.current-year');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let current = 0;
+    
+    function showItem(index) {
+        items.forEach(item => item.classList.remove('active'));
+        items[index].classList.add('active');
+        
+        const position = (index / (items.length - 1)) * 100;
+        dot.style.left = position + '%';
+        
+        year.textContent = items[index].dataset.year;
+    }
+    
+    next.addEventListener('click', () => {
+        if (current < items.length - 1) {
+            current++;
+            showItem(current);
+        }
+    });
+    
+    prev.addEventListener('click', () => {
+        if (current > 0) {
+            current--;
+            showItem(current);
+        }
+    });
+    
+    showItem(current);
 });
